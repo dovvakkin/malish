@@ -17,7 +17,6 @@ TWIT_LOGIN = '89258396534'
 TWIT_PASSWORD = 'k0zhepnin@'
 
 
-
 def vk_login():
     driver.get("https://m.vk.com/")
     text_area = driver.find_element_by_name('email')

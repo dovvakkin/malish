@@ -68,11 +68,12 @@ def get_task_list():  # parse target for all tasks
     return task_list
 
 
-debug_screenshot("test_")
+# TODO
+# а если разлогинится в процессе?
+general_login()
 
 while True:
     try:
-        general_login()
         find_tasks(get_task_list())
         sleep(5)
         check_profit()
@@ -80,4 +81,9 @@ while True:
     except Exception:
         error = str('!!!выход провален: ' + str(datetime.now().strftime('%Y_%m_%d_%H:%M:%S')) + '\n' + str(Exception))
         logging.error(error)
-    sleep(60 * random.uniform(15, 60))  # чтоб типа как человек
+    # TODO
+    # в этом месте будут плодиться огненные лисы
+    driver.switch_to.window(driver.window_handles[0])
+    pause = 60 * random.uniform(15, 60)
+    logging.info("следующий выход через (мин): " + str(pause / 60))
+    sleep(pause)  # чтоб типа как человек
