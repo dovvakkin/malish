@@ -70,16 +70,14 @@ def get_task_list():  # parse target for all tasks
 
 debug_screenshot("test_")
 
-
-
 while True:
     try:
         general_login()
         find_tasks(get_task_list())
         sleep(5)
         check_profit()
-        logging.info('выход на охоту: '+str(datetime.now().strftime('%Y_%m_%d_%H:%M:%S')))
+        logging.info('выход на охоту: ' + str(datetime.now().strftime('%Y_%m_%d_%H:%M:%S')))
     except Exception:
-        error = str('!!!выход провален: ' + str(datetime.now().strftime('%Y_%m_%d_%H:%M:%S'))+'\n'+str(Exception))
+        error = str('!!!выход провален: ' + str(datetime.now().strftime('%Y_%m_%d_%H:%M:%S')) + '\n' + str(Exception))
         logging.error(error)
-        sleep(60 * random.uniform(15, 60))  # чтоб типа как человек
+    sleep(60 * random.uniform(15, 60))  # чтоб типа как человек
